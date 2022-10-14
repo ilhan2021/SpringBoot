@@ -16,50 +16,46 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-<<<<<<< HEAD
-
-=======
-import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
->>>>>>> 6a9d3e2701882f8f7481aa6fe02c51b5a5b55278
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
+@Getter   
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class Student {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long id; // wrapper class kullanmamızın sebebi , eğer değer atanmazsa null olarak tanımlansın, 
+	//int olarak tanımlasaydık default olarak 0 değeri verilecekti
 	
-	@NotNull(message="First name can not be null")
-	@NotBlank(message="Last name can not be White space")
-	@Size(min=2, max=25, message="First Name '${validateValue}' must be between {min} and {max} long")
+	@NotNull(message="first name can not be null")
+	@NotBlank(message="last name can not be white space")
+	@Size(min=2, max=25, message="First name '${validatedValue}' must be between {min} and {max} long")
 	@Column(nullable = false , length = 25)
-<<<<<<< HEAD
-	private String name;
-=======
-	private String firstname;
->>>>>>> 6a9d3e2701882f8f7481aa6fe02c51b5a5b55278
+	private String name ;
 	@Column(nullable = false , length = 25)
 	private String lastName;
 	@Column
 	private Integer grade;
-	@Column(nullable =false , length = 50)
-	@Email(message="Provide valid email")
+	@Column(nullable=false, length=50, unique=true)
+	@Email(message="Provide valid email") // xxx@yy.com -- aaaddd.com
 	private String email;
 	@Column
 	private String phoneNumber;
 	
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "MM/dd/yyyy HH:mm:ss",timezone = "Turkey")
+	@JsonFormat(shape= JsonFormat.Shape.STRING, pattern="MM/dd/yyyy HH:mm:ss", timezone="Turkey")
 	private LocalDateTime createDate = LocalDateTime.now();
 	
 	@OneToMany(mappedBy = "student")
 	private List<Book> books = new ArrayList<>();
-		
-	}
+	
+	
+
+
+}

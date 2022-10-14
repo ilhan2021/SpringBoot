@@ -5,13 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import ch.qos.logback.core.joran.spi.NoAutoStart;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -21,13 +19,14 @@ import lombok.Setter;
 public class Book {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 	
-	@JsonProperty("bookName") // Json cıktıda isminin "bookName" olmasını sagladık)
+	@JsonProperty("bookName") // JSON çıktıda isminin "bookName" olmasını sağladık
 	private String name;
 	
-	@JsonIgnore
+	@JsonIgnore // sonsuz döngüye girmemesi için , kısaca buradan yeniden student 
+	// clasına gitememesi için bu anotation'ı kullandık
 	@ManyToOne
 	@JoinColumn(name="student_id")
 	private Student student;
@@ -43,6 +42,8 @@ public class Book {
 	public Student getStudent() {
 		return student;
 	}
+
+	
 	
 	
 
