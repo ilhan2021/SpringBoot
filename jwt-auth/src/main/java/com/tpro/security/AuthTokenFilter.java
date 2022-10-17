@@ -28,15 +28,14 @@ public class AuthTokenFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-		String jwtToken = parseJwt(request);
-		// requestin içinden gelen tokeni alcam
+		String jwtToken = parseJwt(request); // requestin içinden gelen tokeni alıyorum	
 		try {
-			if(jwtToken!=null && jwtUtils.validateToken(jwtToken)) {
+			if(jwtToken!=null && jwtUtils.validateToken(jwtToken)) { // 2.parametrede token validation yapılıyor
 				String userName = jwtUtils.getUserNameFromJwtToken(jwtToken);
-				UserDetails userDetails = userDetailsService.loadUserByUsername(userName);
+				UserDetails userDetails = userDetailsService.loadUserByUsername(userName); // user -validation
 				UsernamePasswordAuthenticationToken authentication = 
 						new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
-				SecurityContextHolder.getContext().setAuthentication(authentication);
+				SecurityContextHolder.getContext().setAuthentication(authentication); // login kullanıcı bilgilerini Contexte atıyorum
 			}
 		} catch (UsernameNotFoundException e) {
 			// TODO Auto-generated catch block

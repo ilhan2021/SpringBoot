@@ -22,7 +22,7 @@ public class JwtUtils {
 	// 24*60*60*1000
 	private long jwtExpirationMs = 86400000;
 	
-	//************* GENRERATE -- TOKEN  ************
+	//************* GENERATE -- TOKEN  ************
 	public String generateToken(Authentication authentication) {
 		
 		// anlık olarak login olarak kullanıcının bilgisini alıyorum

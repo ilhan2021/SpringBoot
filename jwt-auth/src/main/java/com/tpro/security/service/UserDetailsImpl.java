@@ -27,7 +27,7 @@ public class UserDetailsImpl implements UserDetails {
 	
 	private String userName;
 	
-	@JsonIgnore
+	@JsonIgnore // client tarafına giderse bu obje, password gitmesin !!!
 	private String password;
 	
 	private Collection<? extends GrantedAuthority> authorities;
@@ -38,7 +38,10 @@ public class UserDetailsImpl implements UserDetails {
 				user.getRoles().stream().
 				map(role->new SimpleGrantedAuthority(role.getName().name())).
 				collect(Collectors.toList());
-		return new UserDetailsImpl(user.getId(), user.getUserName(), user.getPassword(), authorities);
+		return new UserDetailsImpl(user.getId(), 
+																	user.getUserName(), 
+																	user.getPassword(), 
+																	authorities);
 	}
 	
 	
