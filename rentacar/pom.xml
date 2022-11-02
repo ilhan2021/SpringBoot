@@ -1,238 +1,3 @@
-ilhan
-#4144
-
-İsmail Akdoğan — 22.10.2022
-Bekir hocanın 88-89 batchteki projesinin son hali
-ademk — 24.10.2022
-Gunaydin arkadaslar
-R.Kardeß — 24.10.2022
-Günaydın hocam
-osmanalyy — 24.10.2022
-Günaydın
-sadik — 24.10.2022
-Günaydın. Ya abi günü aydınlatmak için yazmamış hadi salona gelin bekliyorum demek için yazmış
-osmanalyy — 24.10.2022
-Valla ben yoldayım abiler
-Isparta ya gidiyorum
-slymnsarii — 24.10.2022
-süleyman sarı sizi planlanmış Zoom toplantısına davet ediyor.
-
-Konu: Zoom meeting invitation - süleyman sarı Zoom Toplantısı
-Saat: 27 Eki 2022 11:30 ÖS İstanbul
-
-Zoom Toplantısına Katılın
-https://us04web.zoom.us/j/74602931113?pwd=haZrEc0bVHaagssm7CB9cLbaAZlaTB.1
-
-Toplantı Kimliği: 746 0293 1113
-Parola: 8K4t8u
-Zoom Video
-Join our Cloud HD Video Meeting
-Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution used around the world in board, conference, huddle, and training rooms, as well as ex...
-ademk — 27.10.2022
-merhaba arkadaslar 2 dakika sonra Spring boot projesinin tekrarina basliyoruz
-slymnsarii — 27.10.2022
-Ek dosya türü: archive
-springboot-intro-notlarlaBirlikte.rar
-21.66 KB
-Sedat KURNALI — 27.10.2022
-server:
-  port: 8080
-  error:
-    include-binding-errors: always
-    include-message: always
-    include-stacktrace: never
-Genişlet
-application.yml
-1 KB
-Sedat KURNALI — 27.10.2022
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-Genişlet
-pom.xml
-4 KB
-Sedat KURNALI — 27.10.2022
-Ek dosya türü: archive
-springboot-notlu.rar
-145.49 KB
-ademk — 27.10.2022
-Devam ediyor muyuz @Sedat KURNALI abi
-ademk — 27.10.2022
-Görsel
-ademk — 27.10.2022
-https://kuei.zoom.us/j/62821813867?pwd=dFMyVVhuWEViK1kxcFBvNEVhTHNvdz09
-Zoom Video
-Join our Cloud HD Video Meeting
-Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution used around the world in board, conference, huddle, and training rooms, as well as ex...
-ilhan — 28.10.2022
-hayırlı geceler
-ademk — 29.10.2022
-Gunaydin Arkadaslar
-ilhan — 29.10.2022
-Bugün teknik sebeplerden dolayı yapılamayan B82-83 grubunun Market Session dersi yarın (30 Ekim Pazar)  Est 08.00'da (TR 15.00) yapılacaktır. Anlayışınız için teşekkür eder iyi çalışmalar dileriz.
-slymnsarii — 30.10.2022
-Görsel
-Görsel
-bilgehan comert — 30.10.2022
-/* TASK :
-         * Bir bakkalın 7 günlük tüm kazançlarını günlük olarak gösteren bir program yazınız.
-         * Ayrıca bakkalın bu hafta ortalama kazandığı miktarı gösteren bir method yazınız.
-         * Ayrıca bakkalın hangi günler ortalamanın üstüne kazandığını gösteren bir method yazınız.
-         * Ayrıca bakkalın hangi günler ortalamanın altında kazandığını gösteren bir method yazınız.
-         *
-         * 1. Adım : Günleri içeren bir tane ArrayList oluşturun. (gunler) +++
-         * 2. Adım : Günlük kazançları ekleyeceğimiz bir tane ArrayList oluşturun. (gunlukKazanclar)++++
-         * 3. Adım : While döngüsü ile kullanıcıdan 7 günlük kazançları tekek teker alıp gunlukKazanclar ArrayList'e ekle.++++
-         * 4. Adım : getOrtalamaKazanc() adlı method ile ortalama kazancı alın.++++++
-         * 5. Adım : getOrtalamaninUstundeKazancGünleri() adlı method oluşturun.
-         *           for döngüsü ile tüm günleri ortalama kazanç ile karşılaştır
-         *           ortalama kazançtan yüksekse o günleri return yap.
-         * 6. Adım : getOrtalamaninAltindaKazancGünleri() adlı method oluşturun.
-         *           for döngüsü ile tüm günleri ortalama kazanç ile karşılaştır
-         *           ortalama kazançtan aşağıysa o günleri return yap.
-         * */
-yeni bachlere verilne bir task tekrar yapmak isteyen varsa
-ademk — dün 15:15
-https://youtu.be/PiHfHsnPakU
-YouTube
-Kuzzat Altay
-Yazılım yapamazsın dediler, IT eğitim şirketi kurdum
-Görsel
-Bende diyorum bu IT kursları nerden böyle türedi 😀
-alyeL — dün 15:25
-🙂
-R.K — dün 15:26
-🙂
-ademk — dün 20:58
-https://www.youtube.com/watch?v=JJDV8bn-sXY&list=PL2FJ5zqloqWnAXE3j6q_xUPRrC6PTcMpt
-YouTube
-Çağkan Kantarcı
-41 - Mikroservis Dünyasına Giriş
-Görsel
-slymnsarii — dün 22:14
-Görsel
-Görsel
-Görsel
-Görsel
-alyeL — dün 22:20
-Yine soru sorun lütfen
-Yüklenmiyor hala yaa
-slymnsarii — dün 22:21
-Soruyoruz hocam 😅
-R.Kardeß — dün 22:33
-😂
-alyeL — dün 23:30
-Fark ettim hocam sagolun
-slymnsarii — bugün saat 00:58
-Görsel
-slymnsarii — bugün saat 01:16
-Görsel
-Görsel
-slymnsarii — bugün saat 01:23
-Leyla hocam duyuyor musunuz
-alyeL — bugün saat 01:35
-Görsel
-Görsel
-bilgehan comert — bugün saat 10:13
-https://spring.io/projects
-Spring | Projects
-Level up your Java code and explore what Spring can do for you.
-R.K — bugün saat 10:14
-https://start.spring.io/
-R.K — bugün saat 10:26
-Ek dosya türü: archive
-rentacar.zip
-62.34 KB
-Taha — bugün saat 10:42
-<dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-R.K — bugün saat 10:43
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-Genişlet
-message.txt
-4 KB
-server:
- port: 8090
- error:
-  include-binding-errors: always
-  include-message: always
-  include-stacktrace: never
-
-spring:
- datasource:
-    url: jdbc:mysql://localhost:3306/rentacar_db
-    username: root
-    password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
- jpa:
-   hibernate:
-      ddl-auto: update
-   show-sql: true
-   database-platform: org.hibernate.dialect.MySQL8Dialect
-   properties:
-      '[hibernate.format_sql]': true
-
-info:
- application:
-  name: 'Rentacar Backend App'
-  description: 'This is Rentacar Backend  Project'
-  version: '@project.version@'
-<plugins>
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-war-plugin</artifactId>
-    <version>3.3.1</version>
-</plugin>
-  </plugins>
-<plugins>
-  <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-war-plugin</artifactId>
-    <version>3.3.1</version>
-</plugin>
-Genişlet
-message.txt
-1 KB
-R.K
- bu kanala 
-bir mesaj
- sabitledi. Tüm 
-sabitlenmiş mesajları
- gör.
- — bugün saat 10:53
-R.K — bugün saat 10:55
-abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ._
-osmanalyy — bugün saat 11:38
-Görsel
-bilgehan comert — bugün saat 12:00
-<dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-Sedat KURNALI — bugün saat 12:01
-server:
- port: 8080
- error:
-  include-binding-errors: always
-  include-message: always
-  include-stacktrace: never
-Genişlet
-application.yml
-1 KB
-R.K — bugün saat 12:01
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -243,12 +8,12 @@ R.K — bugün saat 12:01
 		<version>2.7.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.rentacar</groupId>
 	<artifactId>rentacar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rentacar</name>
 	<description>Rent a Car Project</description>
-	
 	
 	<properties>
 		<java.version>11</java.version>
@@ -257,7 +22,6 @@ R.K — bugün saat 12:01
 	</properties>
 	
 	<dependencies>
-	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -277,18 +41,19 @@ R.K — bugün saat 12:01
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
 		
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -297,15 +62,16 @@ R.K — bugün saat 12:01
 		</dependency>
 		
 		<dependency>
-    <groupId>org.mapstruct</groupId>
-    <artifactId>mapstruct</artifactId>
-    <version>${mapstruct.version}</version>
-</dependency>
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok-mapstruct-binding</artifactId>
-    <version>${lombok-mapstruct-binding.version}</version>
-</dependency>
+    		<groupId>org.mapstruct</groupId>
+    		<artifactId>mapstruct</artifactId>
+    		<version>${mapstruct.version}</version>
+		</dependency>
+		
+		<dependency>
+   			<groupId>org.projectlombok</groupId>
+    		<artifactId>lombok-mapstruct-binding</artifactId>
+    		<version>${lombok-mapstruct-binding.version}</version>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -313,10 +79,9 @@ R.K — bugün saat 12:01
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 	<build>
-	
 		<plugins>
-		
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -330,112 +95,7 @@ R.K — bugün saat 12:01
 				</configuration>
 			</plugin>
 			
-				<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-... (32 satır kaldı)
-Daralt
-message.txt
-4 KB
-﻿
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>com.rentacar</groupId>
-	<artifactId>rentacar</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>rentacar</name>
-	<description>Rent a Car Project</description>
-	
-	
-	<properties>
-		<java.version>11</java.version>
-		<mapstruct.version>1.5.2.Final</mapstruct.version>
-		<lombok-mapstruct-binding.version>0.2.0</lombok-mapstruct-binding.version>
-	</properties>
-	
-	<dependencies>
-	
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-		
-		
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<optional>true</optional>
-		</dependency>
-		
-		<dependency>
-    <groupId>org.mapstruct</groupId>
-    <artifactId>mapstruct</artifactId>
-    <version>${mapstruct.version}</version>
-</dependency>
-<dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok-mapstruct-binding</artifactId>
-    <version>${lombok-mapstruct-binding.version}</version>
-</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-	<build>
-	
-		<plugins>
-		
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<excludes>
-						<exclude>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-			
-				<plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
@@ -462,13 +122,7 @@ message.txt
             </configuration>
         </plugin>
 			
-			
-			
 		</plugins>
-		
-	
-		
 	</build>
+
 </project>
-message.txt
-4 KB

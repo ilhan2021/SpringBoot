@@ -7,7 +7,5 @@ import com.rentacar.domain.ContactMessage;
 
 @Repository
 public interface ContactMessageRepository extends JpaRepository<ContactMessage, Long>{
-	
-	
 
 }
