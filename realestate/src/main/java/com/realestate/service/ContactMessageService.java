@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.realestate.domain.ContactMessage;
+import com.realestate.exception.ResourceNotFoundException;
+import com.realestate.exception.message.ErrorMessage;
 import com.realestate.repository.ContactMessageRepository;
 
 @Service
@@ -25,6 +27,12 @@ public class ContactMessageService {
 
 	public List<ContactMessage> getAllMessage() {
 		return contactMessageRepository.findAll();
+	}
+
+	public ContactMessage getMessage(Long id) {
+		return contactMessageRepository.findById(id).orElseThrow(()->
+		new ResourceNotFoundException(String.format(ErrorMessage.RESOURCE_NOT_FOUND_MESSAGE, id))
+				);
 	}
 
 }
