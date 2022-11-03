@@ -13,6 +13,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -80,6 +81,30 @@ public class ContactMessageController {
 		Page<ContactMessageDTO> pageDto=getPageDTO(contactmessagePage);
 		return ResponseEntity.ok(pageDto);
 	 }
+	 
+	 @GetMapping("/{id}")
+	 public ResponseEntity<ContactMessageDTO> getContactMessageByIdWithPath(@PathVariable("id")Long id){
+		 ContactMessage contactMessage = contactMessageService.getMessageById(id);
+		 ContactMessageDTO contactMessageDTO = contactMessageMapper.contactMessageToDTO(contactMessage);
+		 
+		 return ResponseEntity.ok(contactMessageDTO);
+		 
+	 }
+	 
+	 
+	 @GetMapping("/{request}")
+	 public ResponseEntity<ContactMessageDTO> getContactMessageByIdWithRequest(@RequestParam("id")Long id){
+		 ContactMessage contactMessage = contactMessageService.getMessageById(id);
+		 ContactMessageDTO contactMessageDTO = contactMessageMapper.contactMessageToDTO(contactMessage);
+		 
+		 return ResponseEntity.ok(contactMessageDTO);
+		 
+	 }
+	 
+	 
+	 
+	 
+	 
 	 
 	 private Page<ContactMessageDTO> getPageDTO(Page<ContactMessage> contactmessagePage){
 		 Page<ContactMessageDTO> dtoPage= 

@@ -14,6 +14,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import com.visionrent.exception.message.ApiResponseError;
 @ControllerAdvice // merkezi exception handle etmek için @ControllerAdvice ekledim
+
 public class VisionRentExceptionHandler  extends ResponseEntityExceptionHandler{
 	
 	// AMACIM : custom bir exception sistemini kurmak, gelebilecek exceptionları override ederek, istediğim yapıda
