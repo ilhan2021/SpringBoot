@@ -11,7 +11,7 @@ import com.visionrent.domain.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-	Boolean existByEmail(String email);
+	Boolean existsByEmail(String email);
 
 		// User ve Role arasında ManyToMany ilişkide default olarak LAZY tanımlıydı,
 		//	biz bunu EAGER olmasını sağladık
