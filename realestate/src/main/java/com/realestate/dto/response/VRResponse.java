@@ -7,11 +7,11 @@ import lombok.Setter;
 
 @Setter
 @Getter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class VRResponse {
 
 	private String message;
-	boolean success;	
 	
+	private boolean success;
 }

@@ -9,17 +9,16 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class ContactMessageDTO {
+	
+    private Long id;
 
-	private Long id;
+    private String name;
 
-	private String name;
+    private String subject;
 
-	private String subject;
+    private String body;
 
-	private String body;
-
-	private String email;
+    private String email;
 
 }
