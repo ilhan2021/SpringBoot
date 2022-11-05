@@ -17,7 +17,6 @@ spring:
   database-platform: org.hibernate.dialect.PostgreSQLDialect
   properties:
    '[hibernate.format_sql]': true
-
 logging:
  file:
   name: log/visionrent.log
@@ -27,8 +26,23 @@ logging:
   '[org.springframework.web]' : WARN
   '[org.hibernate]' : INFO
   '[org.visionrent]' : DEBUG
-  
-      
+management: #actuator
+ endpoints:
+  web:
+   exposure:
+    include: '*'
+ info:
+  env:
+   enabled: true
+ endpoint:
+  health:
+   show-details: always
+  shutdown:
+   enabled: true
+visionrent:
+ app:
+  jwtSecret: visionRent@!23
+  jwtExpirationMs: 86400000
 info:
  application:
   name: 'VisionRent Backend App'
