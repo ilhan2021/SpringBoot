@@ -13,6 +13,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+import com.rentacar.security.jwt.AuthTokenFilter;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -33,9 +36,17 @@ public class SecurityConfig {
 		authorizeHttpRequests().
 		antMatchers("/","/index.html","/login","/register","/js","/css","/contactmessage").permitAll().
 		anyRequest().authenticated();
-		//TODO AuthTokenFilter oluşturulunca aşağıya addFilterBefore() methodu eklenecek 
+		http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+		
 		return http.build();
 	}
+	
+	@Bean
+	public AuthTokenFilter authTokenFilter() {
+		return new AuthTokenFilter();
+	} 
+	
+	
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {

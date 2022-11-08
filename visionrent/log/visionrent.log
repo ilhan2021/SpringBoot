@@ -1,59 +1,24 @@
-2022-11-08 00:13:21,050 INFO  [restartedMain] com.visionrent.VisionrentApplication:Starting VisionrentApplication using Java 11.0.15 on LENOVO with PID 13440 (C:\Users\Hamza\Documents\SpringBoot\visionrent\target\classes started by Hamza in C:\Users\Hamza\Documents\SpringBoot\visionrent)
-2022-11-08 00:13:21,068 INFO  [restartedMain] com.visionrent.VisionrentApplication:No active profile set, falling back to 1 default profile: "default"
-2022-11-08 00:13:21,292 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2022-11-08 00:13:21,297 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2022-11-08 00:13:24,304 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-11-08 00:13:24,502 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 165 ms. Found 3 JPA repository interfaces.
-2022-11-08 00:13:26,313 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
-2022-11-08 00:13:26,349 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
-2022-11-08 00:13:26,351 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-11-08 00:13:26,583 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
-2022-11-08 00:13:26,584 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 5285 ms
-2022-11-08 00:13:27,255 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-11-08 00:13:27,413 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.12.Final
-2022-11-08 00:13:27,863 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2022-11-08 00:13:28,212 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
-2022-11-08 00:13:28,654 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
-2022-11-08 00:13:28,712 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2022-11-08 00:13:31,151 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2022-11-08 00:13:31,174 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
-2022-11-08 00:13:32,678 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@50c1b237, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29f874c9, org.springframework.security.web.context.SecurityContextPersistenceFilter@41cc2fbe, org.springframework.security.web.header.HeaderWriterFilter@36277399, org.springframework.security.web.authentication.logout.LogoutFilter@13f3b41e, com.visionrent.security.jwt.AuthTokenFilter@5628cea8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3fa022e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6e65b50a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b373d2, org.springframework.security.web.session.SessionManagementFilter@384ef140, org.springframework.security.web.access.ExceptionTranslationFilter@52ef37f6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@63234c7a]
-2022-11-08 00:13:32,789 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2022-11-08 00:13:34,153 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
-2022-11-08 00:13:34,170 INFO  [restartedMain] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 15 endpoint(s) beneath base path '/actuator'
-2022-11-08 00:13:34,584 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
-2022-11-08 00:13:34,643 INFO  [restartedMain] com.visionrent.VisionrentApplication:Started VisionrentApplication in 14.959 seconds (JVM running for 17.883)
-2022-11-08 00:16:34,643 INFO  [http-nio-8080-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-11-08 00:17:04,215 ERROR [http-nio-8080-exec-3] com.visionrent.security.jwt.JwtUtils:JWT Token Validation Error: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
-2022-11-08 00:18:54,589 ERROR [http-nio-8080-exec-6] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:18:54,630 WARN  [http-nio-8080-exec-6] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:19:13,302 ERROR [http-nio-8080-exec-7] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:19:13,306 WARN  [http-nio-8080-exec-7] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:19:59,370 ERROR [http-nio-8080-exec-9] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:19:59,374 WARN  [http-nio-8080-exec-9] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:21:08,786 ERROR [http-nio-8080-exec-2] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:21:08,789 WARN  [http-nio-8080-exec-2] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:21:24,507 ERROR [http-nio-8080-exec-3] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:21:24,509 WARN  [http-nio-8080-exec-3] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:21:51,108 ERROR [http-nio-8080-exec-4] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:21:51,116 WARN  [http-nio-8080-exec-4] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:22:08,466 ERROR [http-nio-8080-exec-5] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:22:08,470 WARN  [http-nio-8080-exec-5] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:22:31,457 ERROR [http-nio-8080-exec-7] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:22:31,461 WARN  [http-nio-8080-exec-7] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:22:55,954 ERROR [http-nio-8080-exec-8] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:22:55,957 WARN  [http-nio-8080-exec-8] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:23:10,944 ERROR [http-nio-8080-exec-9] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:23:10,947 WARN  [http-nio-8080-exec-9] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:38:30,533 ERROR [http-nio-8080-exec-2] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:38:30,617 WARN  [http-nio-8080-exec-2] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:47:10,895 ERROR [http-nio-8080-exec-6] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:47:10,923 WARN  [http-nio-8080-exec-6] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:47:26,174 ERROR [http-nio-8080-exec-7] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:47:26,178 WARN  [http-nio-8080-exec-7] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 00:58:51,364 ERROR [http-nio-8080-exec-2] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 00:58:51,403 WARN  [http-nio-8080-exec-2] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 01:00:31,253 ERROR [http-nio-8080-exec-4] com.visionrent.exception.VisionRentExceptionHandler:Access is denied
-2022-11-08 01:00:31,258 WARN  [http-nio-8080-exec-4] org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver:Resolved [org.springframework.security.access.AccessDeniedException: Access is denied]
-2022-11-08 01:04:40,753 WARN  [http-nio-8080-exec-4] org.hibernate.hql.internal.ast.QueryTranslatorImpl:HHH000104: firstResult/maxResults specified with collection fetch; applying in memory!
-2022-11-08 01:04:58,255 ERROR [http-nio-8080-exec-7] com.visionrent.exception.VisionRentExceptionHandler:Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "all"
+2022-11-09 00:16:58,106 INFO  [restartedMain] com.visionrent.VisionrentApplication:Starting VisionrentApplication using Java 11.0.15 on LENOVO with PID 15104 (C:\Users\Hamza\Documents\SpringBoot\visionrent\target\classes started by Hamza in C:\Users\Hamza\Documents\SpringBoot\visionrent)
+2022-11-09 00:16:58,129 INFO  [restartedMain] com.visionrent.VisionrentApplication:No active profile set, falling back to 1 default profile: "default"
+2022-11-09 00:16:58,362 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-09 00:16:58,364 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor:For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-09 00:17:01,854 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-09 00:17:02,073 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate:Finished Spring Data repository scanning in 191 ms. Found 3 JPA repository interfaces.
+2022-11-09 00:17:04,230 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat initialized with port(s): 8080 (http)
+2022-11-09 00:17:04,274 INFO  [restartedMain] org.apache.catalina.core.StandardService:Starting service [Tomcat]
+2022-11-09 00:17:04,276 INFO  [restartedMain] org.apache.catalina.core.StandardEngine:Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-09 00:17:04,569 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]:Initializing Spring embedded WebApplicationContext
+2022-11-09 00:17:04,570 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext:Root WebApplicationContext: initialization completed in 6204 ms
+2022-11-09 00:17:05,459 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper:HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-09 00:17:05,650 INFO  [restartedMain] org.hibernate.Version:HHH000412: Hibernate ORM core version 5.6.12.Final
+2022-11-09 00:17:06,173 INFO  [restartedMain] org.hibernate.annotations.common.Version:HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-09 00:17:06,461 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Starting...
+2022-11-09 00:17:07,070 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource:HikariPool-1 - Start completed.
+2022-11-09 00:17:07,138 INFO  [restartedMain] org.hibernate.dialect.Dialect:HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-11-09 00:17:10,069 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator:HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-09 00:17:10,105 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean:Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-09 00:17:12,394 INFO  [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain:Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@25cd8cc2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71d1fb5c, org.springframework.security.web.context.SecurityContextPersistenceFilter@28fcd30a, org.springframework.security.web.header.HeaderWriterFilter@19582d1f, org.springframework.security.web.authentication.logout.LogoutFilter@9f9a46a, com.visionrent.security.jwt.AuthTokenFilter@588e45c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@380f97f5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@316e036b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e5fd57e, org.springframework.security.web.session.SessionManagementFilter@3b3d5da9, org.springframework.security.web.access.ExceptionTranslationFilter@20738b9f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5290db1c]
+2022-11-09 00:17:12,529 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration:spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-09 00:17:14,458 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer:LiveReload server is running on port 35729
+2022-11-09 00:17:14,479 INFO  [restartedMain] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver:Exposing 15 endpoint(s) beneath base path '/actuator'
+2022-11-09 00:17:14,691 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer:Tomcat started on port(s): 8080 (http) with context path ''
