@@ -8,5 +8,7 @@ public class ResponseMessage {
 	public final static String REGISTER_RESPONSE_MESSAGE="Registration successfully done";
 	public final static String LOGIN_RESPONSE_MESSAGE="Login successfully done";
 	public final static String USER_UPDATE_RESPONSE="User successfully updated";
+	public final static String USER_DELETE_RESPONSE="User successfully deleted";
+	public final static String PASSWORD_UPDATE_RESPONSE="Password successfully updated";
 
 }

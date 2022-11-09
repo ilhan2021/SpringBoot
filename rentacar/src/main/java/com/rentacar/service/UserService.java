@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +13,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import com.rentacar.domain.Role;
 import com.rentacar.domain.User;
 import com.rentacar.domain.enums.RoleType;
 import com.rentacar.dto.UserDTO;
+import com.rentacar.dto.request.AdminPasswordRequest;
+import com.rentacar.dto.request.AdminUserUpdateRequest;
 import com.rentacar.dto.request.RegisterRequest;
 import com.rentacar.dto.request.UserRequest;
+import com.rentacar.exception.BadRequestException;
 import com.rentacar.exception.ConflictException;
 import com.rentacar.exception.ResourceNotFoundException;
 import com.rentacar.exception.message.ErrorMessages;
@@ -110,9 +113,11 @@ public class UserService {
 		return userDTO;
 	}
 
-	public void updateUser(Long id, @Valid UserRequest userRequest) {
+	public void updateUser(Long id, UserRequest userRequest) {
 		User user = currentUser();
-		
+
+		buildInException(user);
+
 		if (userRepository.existsByEmail(userRequest.getEmail()) && !userRequest.getEmail().equals(user.getEmail())) {
 			throw new ConflictException(
 					String.format(ErrorMessages.EMAIL_ALREADY_EXISTS_MESSAGE, userRequest.getEmail()));
@@ -130,6 +135,93 @@ public class UserService {
 
 		userRepository.save(user);
 
+	}
+
+	public void buildInException(User user) {
+
+		if (user.getBuiltIn()) {
+			throw new BadRequestException(ErrorMessages.BAD_REQUEST_EXCEPTION);
+		}
+
+	}
+
+	public void updatePasswordByAdmin(Long id, AdminPasswordRequest adminPasswordRequest) {
+		User user = getById(id);
+
+		buildInException(user);
+
+		if (!passwordEncoder.matches(adminPasswordRequest.getOldPassword(), user.getPassword())) {
+			throw new BadRequestException(ErrorMessages.PASSWORD_MATCHES_EXCEPTION);
+		}
+		String newEncodePassword = passwordEncoder.encode(adminPasswordRequest.getNewPassword());
+		user.setPassword(newEncodePassword);
+		userRepository.save(user);
+
+	}
+
+	private User getById(Long id) {
+		return userRepository.findById(id).orElseThrow(
+				() -> new ResourceNotFoundException(String.format(ErrorMessages.RESOURCE_NOT_FOUND_MESSAGE, id)));
+	}
+
+	public void deleteUser(Long id) {
+		User user = getById(id);
+		buildInException(user);
+		userRepository.delete(user);
+	}
+
+	public void updateUserByAdmin(Long id, @Valid AdminUserUpdateRequest adminUserUpdateRequest) {
+		User user = getById(id);
+		buildInException(user);
+
+		if (userRepository.existsByEmail(adminUserUpdateRequest.getEmail())
+				&& !adminUserUpdateRequest.getEmail().equals(user.getEmail())) {
+			throw new ConflictException(
+					String.format(ErrorMessages.EMAIL_ALREADY_EXISTS_MESSAGE, adminUserUpdateRequest.getEmail()));
+		}
+
+		if (adminUserUpdateRequest.getPassword() == null) {
+			adminUserUpdateRequest.setPassword(user.getPassword());
+		} else {
+			String encodePasword = passwordEncoder.encode(adminUserUpdateRequest.getPassword());
+			adminUserUpdateRequest.setPassword(encodePasword);
+		}
+		Set<String> roles = adminUserUpdateRequest.getRoles();
+
+		Set<Role> userRoles = convertRole(roles);
+
+		user.setAddress(adminUserUpdateRequest.getAddress());
+		user.setBuiltIn(adminUserUpdateRequest.getBuiltIn());
+		user.setEmail(adminUserUpdateRequest.getEmail());
+		user.setFirstName(adminUserUpdateRequest.getFirstName());
+		user.setLastName(adminUserUpdateRequest.getLastName());
+		user.setPassword(adminUserUpdateRequest.getPassword());
+		user.setPhoneNumber(adminUserUpdateRequest.getPhoneNumber());
+		user.setRoles(userRoles);
+		user.setZipcode(adminUserUpdateRequest.getZipcode());
+		
+		userRepository.save(user);
+
+	}
+
+	public Set<Role> convertRole(Set<String> roles) {
+		Set<Role> userRoles = new HashSet<>();
+
+		if (roles == null) {
+			Role role = roleService.findByType(RoleType.ROLE_CUSTOMER);
+			userRoles.add(role);
+		} else {
+			roles.forEach(r -> {
+				if (r.equals(RoleType.ROLE_ADMIN.getName())) {
+					Role role = roleService.findByType(RoleType.ROLE_ADMIN);
+					userRoles.add(role);
+				} else {
+					Role role = roleService.findByType(RoleType.ROLE_CUSTOMER);
+					userRoles.add(role);
+				}
+			});
+		}
+		return userRoles;
 	}
 
 }

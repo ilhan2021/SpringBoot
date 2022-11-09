@@ -12,7 +12,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,10 +23,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rentacar.dto.UserDTO;
+import com.rentacar.dto.request.AdminPasswordRequest;
+import com.rentacar.dto.request.AdminUserUpdateRequest;
 import com.rentacar.dto.request.UserRequest;
 import com.rentacar.dto.response.ResponseMessage;
 import com.rentacar.dto.response.VRResponse;
-import com.rentacar.mapper.UserMapper;
 import com.rentacar.service.UserService;
 
 @RestController
@@ -33,13 +36,12 @@ public class UserController {
 
 	private UserService userService;
 
-	private UserMapper userMapper;
 
 	@Autowired
-	public UserController(UserService userService, UserMapper userMapper) {
+	public UserController(UserService userService) {
 		super();
 		this.userService = userService;
-		this.userMapper = userMapper;
+		
 	}
 
 	@GetMapping("/auth/all")
@@ -82,7 +84,29 @@ public class UserController {
 		return ResponseEntity.ok(response);
 	}
 	
+	@PatchMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<VRResponse> updatePasswordByAdmin(@PathVariable("id")Long id,@Valid @RequestBody AdminPasswordRequest adminPasswordRequest ){
+		userService.updatePasswordByAdmin(id,adminPasswordRequest);
+		VRResponse response=new VRResponse(ResponseMessage.PASSWORD_UPDATE_RESPONSE,true);
+		return ResponseEntity.ok(response);
+	}
 	
+	@DeleteMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<VRResponse> deleteUser(@PathVariable("id")Long id){
+		userService.deleteUser(id);
+		VRResponse response=new VRResponse(ResponseMessage.USER_DELETE_RESPONSE,true);
+		return ResponseEntity.ok(response);
+	}
+	
+	@PutMapping("/{id}/auth")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<VRResponse> updateUserByAdmin(@PathVariable("id")Long id,@Valid @RequestBody AdminUserUpdateRequest adminUserUpdateRequest ){
+		userService.updateUserByAdmin(id,adminUserUpdateRequest);
+		VRResponse response=new VRResponse(ResponseMessage.USER_UPDATE_RESPONSE,true);
+		return ResponseEntity.ok(response);
+	}
 	
 	
 	

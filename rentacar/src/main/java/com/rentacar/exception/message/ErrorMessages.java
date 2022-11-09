@@ -9,6 +9,8 @@ public class ErrorMessages {
 	public final static String USER_NOT_FOUND_LOGGER="User not found %s";
 	public final static String EMAIL_ALREADY_EXISTS_MESSAGE="Email: %s is already exists";
 	public final static String USER_NOT_FOUND_="User not found";
+	public final static String BAD_REQUEST_EXCEPTION="You don't have any permission to change this data";
+	public final static String PASSWORD_MATCHES_EXCEPTION="Your passwords are not matches";
 	
 	
 	

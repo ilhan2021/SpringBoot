@@ -1,6 +1,5 @@
 package com.rentacar.security.jwt;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.servlet.FilterChain;
@@ -18,19 +17,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.rentacar.exception.message.ErrorMessages;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+
 
 //@AllArgsConstructor
 //@NoArgsConstructor
 
 public class AuthTokenFilter extends OncePerRequestFilter{
+// 	@RequiredArgsConstructor final olmayan objeleri enjecte etmiyor
+	
 	
 	@Autowired
 	private  JwtUtils jwtUtils;
