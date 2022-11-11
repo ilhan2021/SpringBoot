@@ -5,6 +5,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import com.visionrent.domain.Car;
 import com.visionrent.dto.CarDTO;
+
+
 @Mapper(componentModel = "spring")
 public interface CarMapper {
 	
@@ -17,7 +19,7 @@ public interface CarMapper {
  // TODO bakılacak
 	List<CarDTO> map(List<Car> cars);
 	
-	// TODO  buraya metod yazılacak , getImageAsString()
+
 	@Mapping(target="image" , ignore = true)
 	CarDTO carToCarDTO(Car car);
 }
