@@ -26,19 +26,27 @@ public class SecurityConfig {
 	
 	
 	@Bean
-	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf().disable().
-		     sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).
-		     and().
-			 authorizeRequests().
-			 antMatchers("/","/index.html","/register","/login","/js","/css").permitAll().
-			 anyRequest().authenticated();
-		
-		http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-		
-		return http.build();
-				
-	}
+	public SecurityFilterChain filterChain( HttpSecurity http ) throws Exception{
+    	http.csrf().disable().
+    	         sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).
+    	         and().
+    			 authorizeRequests().
+    			 antMatchers("/",
+    					  						"index.html",
+    					  						"/login",
+    					  						"/register",
+    					  						"/js/*",
+    					  						"/css/*",
+    					  						"/images/*",
+    					  						"/files/download/**",
+    					  						"/files/display/**",
+    					  						"/car/visitors/**").permitAll().
+    			 anyRequest().authenticated();
+    	
+    	http.addFilterBefore(authTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+    	return http.build();
+    	    	
+    }
 	
 	@Bean
 	public AuthTokenFilter authTokenFilter() {
@@ -68,4 +76,6 @@ public class SecurityConfig {
 		
 	}
 
+	
+	
 }
