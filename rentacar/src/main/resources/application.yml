@@ -1,15 +1,15 @@
-server: 
-  port: 8090
-  error:
-    include-binding-errors: always
-    include-message: always
-    include-stacktrace: never
-    
+server:
+ port: 8080
+ error:
+  include-binding-errors: always
+  include-message: always
+  include-stacktrace: never
+  
 spring:
  datasource:
-  url: jdbc:postgresql://localhost:5432/rentacar_db
-  username: rentacar
-  password: 1234
+  url: jdbc:postgresql://localhost:5432/visionrent_db
+  username: visionrent_user
+  password: password
   driver-class-name: org.postgresql.Driver
  jpa:
   hibernate: 
@@ -18,38 +18,44 @@ spring:
   database-platform: org.hibernate.dialect.PostgreSQLDialect
   properties:
    '[hibernate.format_sql]': true
-      
-info:
-  application:
-    name: 'Rentacar Backend App'
-    description: 'This is Rentacar Backend  Project'
-    version: '@project.version@'   
-
+ #image
+ servlet:
+  multipart:
+   max-file-size: 2MB
+   max-request-size: 2MB   
+   
 logging:
  file:
-  name: log/rentacar.log
+  name: log/visionrent.log
  pattern:
   file: "%d %-5level [%thread] %logger:%msg%n"
  level:
   '[org.springframework.web]' : WARN
   '[org.hibernate]' : INFO
-  '[org.rentacar]' : DEBUG
-
-rentacar:
-  app:
-    jwtSecret: rentACar@!23
-    jwtExpirationMs: 86400000
-
+  '[org.visionrent]' : DEBUG
+  
 management: #actuator
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-  info:
-    env:
-      enabled: true
-  endpoint:
-    health:
-      show-details: always
-    shutdown:
-      enabled: true 
+ endpoints:
+  web:
+   exposure:
+    include: '*'
+ info:
+  env: 
+   enabled: true
+ endpoint:
+  health:
+   show-details: always
+  shutdown:
+   enabled: true 
+
+visionrent:
+ app:
+  jwtSecret: visionRent@!23
+  jwtExpirationMs: 86400000   
+   
+info:
+ application:
+  name: 'VisionRent Backend App'
+  description: 'This is VisionRent CarRental Backend Project'
+  version: '@project.version@'
+   

@@ -1,7 +1,9 @@
 package com.visionrent.controller;
 
 import java.util.List;
+
 import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -20,12 +22,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.visionrent.dto.CarDTO;
 
+import com.visionrent.dto.CarDTO;
 import com.visionrent.dto.response.ResponseMessage;
 import com.visionrent.dto.response.VRResponse;
-import com.visionrent.security.service.CarService;
-
+import com.visionrent.service.CarService;
 
 @RestController
 @RequestMapping("/car")
@@ -60,16 +61,19 @@ public class CarController {
 	//*****************getAllCarsWithPage**************
 	
 	@GetMapping("/visitors/pages")
-	public ResponseEntity<Page<CarDTO>> getAllCarsWithPage(
-			 											   @RequestParam("page") int page,
-			 										       @RequestParam("size") int size,
-			 											   @RequestParam("sort") String prop,//neye göre sıralanacağı belirtiliyor
-			 											   @RequestParam(value="direction",
-			 											     required = false, // direction required olmasın
-			 												 defaultValue = "DESC") Direction direction )  {
+	public ResponseEntity<Page<CarDTO>> getAllCarsWithPage(  
+			 																		@RequestParam("page") int page,
+			 																		@RequestParam("size") int size,
+			 																		@RequestParam("sort") String prop,//neye göre sıralanacağı belirtiliyor
+			 																		@RequestParam(value="direction",
+			 																			required = false, // direction required olmasın
+			 																			defaultValue = "DESC") Direction direction )  {
 			Pageable pageable = PageRequest.of(page, size, Sort.by(direction, prop));
+
 			Page<CarDTO> pageDTO = carService.findAllWithPage(pageable);
+
 			return ResponseEntity.ok(pageDTO);
+
 	
 	
 	}	
@@ -86,8 +90,8 @@ public class CarController {
 	@PutMapping("/admin/auth")
 	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<VRResponse> updateCar(@RequestParam("id") Long id,
-																	@RequestParam("imageId") String imageId,
-																	@Valid @RequestBody CarDTO carDTO)  {
+																											@RequestParam("imageId") String imageId,
+																											@Valid @RequestBody CarDTO carDTO)  {
 		carService.updateCar(id,imageId,carDTO);
 		
 		VRResponse response = new VRResponse(ResponseMessage.CAR_UPDATE_RESPONSE_MESSAGE, true);
@@ -95,17 +99,24 @@ public class CarController {
 		
 		
 	}
-	
 	//***********************DELETE CAR************************
 	
-		@DeleteMapping("/admin/{id}/auth")
-		@PreAuthorize("hasRole('ADMIN')")
-		public ResponseEntity<VRResponse> deleteCar(@PathVariable Long id){
-			carService.removeById(id);
-			
-			VRResponse response = new VRResponse(ResponseMessage.CAR_DELETE_RESPONSE_MESSAGE,true);
-			return ResponseEntity.ok(response);
-		}
+	@DeleteMapping("/admin/{id}/auth")
+	@PreAuthorize("hasRole('ADMIN')")
+	public ResponseEntity<VRResponse> deleteCar(@PathVariable Long id){
+		carService.removeById(id);
+		
+		VRResponse response = new VRResponse(ResponseMessage.CAR_DELETE_RESPONSE_MESSAGE,true);
+		return ResponseEntity.ok(response);
+	}
 	
 	
+	
+	
+	
+	
+	
+	
+	
+
 }

@@ -3,7 +3,6 @@ package com.visionrent.mapper;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.mapstruct.Mapper;
@@ -14,7 +13,6 @@ import com.visionrent.domain.Car;
 import com.visionrent.domain.ImageFile;
 import com.visionrent.dto.CarDTO;
 
-
 @Mapper(componentModel = "spring")
 public interface CarMapper {
 	
@@ -22,40 +20,25 @@ public interface CarMapper {
 	@Mapping(target="image" , ignore = true) // image fieldı bir tarafda String diğer tarafda ImageFile türünde old için ignore ediliyor
 	Car carDTOToCar(CarDTO carDTO) ;
 	
-	//*************************************
-	
- // TODO bakılacak
-	List<CarDTO> map(List<Car> cars);
+	//************************************* 
 	
 
-	@Mapping(source="image",target= "image", qualifiedByName = "getImageAsString")
+	 List<CarDTO> map(List<Car> cars);
+	
+
+	@Mapping(source="image", target="image", qualifiedByName = "getImageAsString")
 	CarDTO carToCarDTO(Car car);
 	
 	@Named("getImageAsString")
-	public static Set<String> getImageIds (Set<ImageFile>imageFiles){
-		Set<String>imgs = new HashSet<>();
+	public static  Set<String> getImageIds( Set<ImageFile> imageFiles) {
+		Set<String> imgs = new HashSet<>();
 		imgs = imageFiles.stream().map(imFile->imFile.getId().
-													  toString()).
-													  collect(Collectors.toSet());
-		return imgs;
-				
+																											toString()).
+																										    collect(Collectors.toSet());
+		 return imgs;
 	}
-	
-	
-	
+
+
+
+ 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
